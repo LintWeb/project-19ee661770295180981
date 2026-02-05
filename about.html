@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JBS Mechanical & Engineering</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #fff;
+            color: #2c3e50;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .contact-btn {
+            background-color: #3498db;
+            color: #fff !important;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .contact-btn:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            padding: 20px 15px 10px 15px;
+            color: #2c3e50;
+        }
+
+        .team-member p {
+            padding: 0 15px 20px 15px;
+            color: #666;
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .department-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .department-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .department-item h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .department-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: #3498db;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            width: calc(50% - 30px);
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            margin-left: 30px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            margin-right: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #3498db;
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -40px;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -40px;
+        }
+
+        .timeline-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                margin-right: 0 !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::before {
+                left: -30px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">JBS Mechanical & Engineering</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#manpower">Manpower</a></li>
+                <li><a href="index.html#manpower" class="contact-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="leadership">
+            <h2>Our Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CEO">
+                    <h3>John Smith</h3>
+                    <p>Chief Executive Officer<br>25+ years in mechanical engineering leadership</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CTO">
+                    <h3>Sarah Johnson</h3>
+                    <p>Chief Technology Officer<br>Expert in process engineering and innovation</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="COO">
+                    <h3>Michael Chen</h3>
+                    <p>Chief Operations Officer<br>Specialized in project management and delivery</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CFO">
+                    <h3>Emily Davis</h3>
+                    <p>Chief Financial Officer<br>Financial strategy and business development</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="departments">
+            <h2>Core Departments</h2>
+            <div class="departments-grid">
+                <div class="department-item">
+                    <div class="department-icon">⚙️</div>
+                    <h3>Engineering Design</h3>
+                    <p>Our design team creates innovative solutions for complex mechanical systems, utilizing the latest CAD technologies and industry standards.</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-icon">🔧</div>
+                    <h3>Manufacturing</h3>
+                    <p>State-of-the-art manufacturing facilities equipped with CNC machines, welding stations, and quality control systems.</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-icon">🚀</div>
+                    <h3>Project Management</h3>
+                    <p>Dedicated project managers ensure timely delivery, budget control, and client satisfaction throughout the project lifecycle.</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-icon">🛡️</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Comprehensive QA processes with certified inspectors and advanced testing equipment to maintain the highest standards.</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-icon">👥</div>
+                    <h3>Human Resources</h3>
+                    <p>Talent acquisition, training programs, and employee development initiatives to build a skilled and motivated workforce.</p>
+                </div>
+                <div class="department-item">
+                    <div class="department-icon">📊</div>
+                    <h3>Business Development</h3>
+                    <p>Market research, client relationship management, and strategic planning to drive company growth and expansion.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="success">
+            <h2>Road to Success</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2010 - Company Founded</h3>
+                    <p>JBS Mechanical & Engineering established with a vision to provide exceptional mechanical engineering services.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2012 - First Major Project</h3>
+                    <p>Successfully completed our first large-scale industrial plant maintenance contract.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2015 - ISO Certification</h3>
+                    <p>Achieved ISO 9001 certification, demonstrating our commitment to quality management systems.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2018 - International Expansion</h3>
+                    <p>Expanded operations to serve international clients and established partnerships abroad.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2020 - Digital Transformation</h3>
+                    <p>Implemented advanced digital tools and automation systems to enhance efficiency and service delivery.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023 - Industry Leadership</h3>
+                    <p>Recognized as a leading mechanical engineering firm with awards for innovation and excellence.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JBS Mechanical & Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>
