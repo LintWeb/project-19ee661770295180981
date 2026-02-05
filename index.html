@@ -103,6 +103,24 @@
             background-color: #2980b9;
         }
 
+        .btn-secondary {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+
+        .btn-secondary:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
         #about, #services, #projects, #certifications {
             background-color: #fff;
             margin-bottom: 20px;
@@ -199,6 +217,11 @@
             .services-grid, .projects-grid, .certifications-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -220,7 +243,10 @@
         <section id="hero">
             <h1>Welcome to JBS Mechanical & Engineering</h1>
             <p>Excellence in Mechanical Engineering Solutions</p>
-            <a href="#about" class="btn">Learn More</a>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Explore Our Services</a>
+                <a href="#about" class="btn btn-secondary">Request Quote</a>
+            </div>
         </section>
 
         <section id="about">
