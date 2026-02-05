@@ -134,8 +134,45 @@
             text-align: center;
         }
 
-        #about p {
-            margin-bottom: 20px;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .mission h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .mission p {
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h4 {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            margin: 0;
         }
 
         .services-grid {
@@ -222,6 +259,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -251,8 +297,30 @@
 
         <section id="about">
             <h2>About Us</h2>
-            <p>JBS Mechanical & Engineering is a leading provider of comprehensive mechanical engineering services. With years of experience and a commitment to innovation, we deliver high-quality solutions to meet the diverse needs of our clients across various industries.</p>
-            <p>Our team of skilled engineers and technicians combines technical expertise with a customer-centric approach to ensure that every project is completed on time, within budget, and to the highest standards.</p>
+            <div class="about-content">
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To provide innovative, reliable, and sustainable mechanical engineering solutions that empower our clients to achieve their goals. We are committed to excellence, safety, and continuous improvement in all our endeavors.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h4>3+</h4>
+                        <p>Years of Excellence</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>50+</h4>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>100+</h4>
+                        <p>Skilled Workers</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>24/7</h4>
+                        <p>Support Available</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="services">
